@@ -1,0 +1,19 @@
+[Unit]
+Description=GCP CloudSQL Proxy
+After=network.target
+
+[Service]
+NAME_REPLACE
+Environment=INSTANCE_CONNECTION_PORT=5432
+
+User=root
+Group=root
+WorkingDirectory=/usr/bin
+Type=forking
+RemainAfterExit=yes
+ExecStart=/bin/sh -c '/usr/bin/nohup /opt/cloud_sql/cloud_sql_proxy -instances=${INSTANCE_CONNECTION_NAME}=tcp:${INSTANCE_CONNECTION_PORT} &'
+StandardOutput=journal
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
