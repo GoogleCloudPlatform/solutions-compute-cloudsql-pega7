@@ -3,7 +3,7 @@
 ## Overview
 
 This repository contains the accompanying code for the
-[Deploying Pega on GCP using Compute Engine and Cloud SQL](link_address)
+[Deploying Pega 7 on GCP using Compute Engine and Cloud SQL](https://cloud.google.com/solutions/deploying-pega-7-using-compute-engine-and-cloud-sql)
 tutorial.
 
 The scripts in this repository are used by the tutorial to install, configure
